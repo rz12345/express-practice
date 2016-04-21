@@ -62,9 +62,6 @@ app.use(session({
 
 app.use(express.static(path.join(__dirname, 'public')));
 
-// 修改後即時重啟
-app.use(require('easy-livereload')());
-
 // routes
 require('./app/routes')(app);
 

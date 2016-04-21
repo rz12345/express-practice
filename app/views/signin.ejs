@@ -6,6 +6,8 @@
 </head>
 <body>
 <h1><%= title %></h1>
+<% include _include/menu %>
+<hr/>
 <form action="/user/signin" method="post">
     Username<input type="text" name="user[name]"/> <br/>
     Password<input type="password" name="user[password]"/> <br/>

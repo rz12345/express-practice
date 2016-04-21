@@ -39,7 +39,8 @@ exports.signIn = function (req, res) {
                 if (isMatch) {
                     // 密碼比對成功
                     req.session.user = user;
-                    res.send('user 驗證通過');
+                    //res.send('user 驗證通過');
+                    res.redirect('/');
                 } else {
                     // 密碼比對失敗
                     res.send('密碼輸入錯誤');
@@ -67,4 +68,9 @@ exports.signUp = function (req, res, next) {
             });
         }
     });
+};
+
+exports.logOut = function (req,res,next){
+    delete req.session.user;
+    res.redirect('/');
 };
